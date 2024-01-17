@@ -8,9 +8,11 @@ import User from './Schema/User.js';
 import mongoose from 'mongoose';
 import formatDatatoSend from './helper/formatDataToSend.js';
 import Book from "./Schema/Books.js"
+import morgan from 'morgan';
 
 const app = express();
 
+app.use(morgan('combined'));
 app.use(cors());
 app.use(express.json())
 mongoose.connect("mongodb://localhost:27017/libraryBooks", {
